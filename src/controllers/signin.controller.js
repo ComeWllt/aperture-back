@@ -30,7 +30,7 @@ exports.create = function(req, res) {
               process.env.PASSPORT_SECRET
             );
             // return the information including token as JSON
-            res.json({ success: true, token: 'JWT ' + token });
+            res.json({ success: true, token: token });
             Tests.create(req.body).then(() => {
               res.statusCode = 200;
               res.setHeader('Content-Type', 'application/json');
