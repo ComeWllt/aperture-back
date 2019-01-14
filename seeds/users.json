@@ -1,0 +1,32 @@
+[
+  {
+    "firstname": "None",
+    "lastname": "None",
+    "username": "visitor",
+    "email": "None",
+    "password": "$2a$10$mmlQIHnc4nqGWgJCAFYyqOVGgOOFUG2b/Zmajf6tLlnrjOKt0Kn/G",
+    "category": "visitor",
+    "createdAt": "2018-3-21",
+    "updatedAt": "2018-3-21"
+  },
+  {
+    "firstname": "John",
+    "lastname": "Doe",
+    "username": "john-doe",
+    "email": "john.doe@email.com",
+    "password": "$2a$10$wtljc.Cdc7cpNheT8ZFFZuiuqOOwAmhHimEXrwiEogKnkNk6YhCri",
+    "category": "admin",
+    "createdAt": "2018-3-22",
+    "updatedAt": "2018-3-22"
+  },
+  {
+    "firstname": "Alfred",
+    "lastname": "Vioche",
+    "username": "alfred-vioche",
+    "email": "alfred.vioche@email.com",
+    "password": "$2a$10$6ramJ/FEfjrgyLy8ajpcO.GrhQlNmdr97YOEHdjNZJGnl2X1PSzuq",
+    "category": "user",
+    "createdAt": "2018-3-22",
+    "updatedAt": "2018-3-22"
+  }
+]
