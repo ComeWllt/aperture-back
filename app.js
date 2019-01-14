@@ -7,10 +7,9 @@ const cors = require('cors');
 const passport = require('passport');
 
 const routes = require('./src/routes');
-const config = require('./config');
 
 // Connection URL
-const url = config.database;
+const url = process.env.MLAB_URL;
 const connect = mongoose.connect(url);
 mongoose.Promise = require('bluebird');
 
