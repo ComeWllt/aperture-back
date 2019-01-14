@@ -29,7 +29,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-const whitelist = ['https://aperture-photos.netlify.com'];
+const whitelist = [
+  'https://aperture-photos.netlify.com',
+  'https://my-photo-front.herokuapp.com'
+];
 const corsOptions = {
   origin: whitelist,
   credentials: true
