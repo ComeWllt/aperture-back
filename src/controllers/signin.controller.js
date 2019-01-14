@@ -1,6 +1,5 @@
 const User = require('../models/user');
 const Tests = require('../models/test');
-const config = require('../../config/database');
 const passport = require('passport');
 require('../../config/passport')(passport);
 const jwt = require('jsonwebtoken');
@@ -28,7 +27,7 @@ exports.create = function(req, res) {
                 exp: Math.floor(Date.now() / 1000) + 60 * 60 * 12,
                 data: user.toJSON()
               },
-              config.secret
+              process.env.PASSPORT_SECRET
             );
             // return the information including token as JSON
             res.json({ success: true, token: 'JWT ' + token });
