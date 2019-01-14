@@ -1,4 +1,4 @@
 [build]
   base    = ""
-  command = "sed 's%_SECRET_%'$SECRET'%g; s%_DATABASE_%'$DATABASE'%' config.template.json > config.json && npm run start"
+  command = "sed 's%_SECRET_%'$SECRET'%g; s%_DATABASE_%'$DATABASE'%' config.template.js > config.js && npm run start"
   publish = ""
