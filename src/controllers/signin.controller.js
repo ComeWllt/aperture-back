@@ -13,7 +13,7 @@ exports.create = function(req, res) {
       if (err) throw err;
 
       if (!user) {
-        res.status(401).send({
+        res.status(200).send({
           success: false,
           msg: 'Authentication failed. User not found.'
         });
@@ -37,7 +37,7 @@ exports.create = function(req, res) {
               res.json({ username: req.body.username });
             });
           } else {
-            res.status(401).send({
+            res.status(200).send({
               success: false,
               msg: 'Authentication failed. Wrong password.'
             });
