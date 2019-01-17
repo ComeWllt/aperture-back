@@ -34,6 +34,7 @@ const whitelist = [
   'https://aperture-photos.netlify.com',
   'https://my-photo-front.herokuapp.com'
 ];
+if (process.env.NODE_ENV === 'dev') whitelist.push('http://localhost:8080');
 const corsOptions = {
   origin: whitelist,
   credentials: true
