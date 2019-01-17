@@ -1,3 +1,4 @@
+if (process.env.NODE_ENV === 'dev') require('custom-env').env();
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');

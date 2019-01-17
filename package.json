@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./src/bin/www",
-    "dev": "nodemon index.js"
+    "dev": "NODE_ENV=dev nodemon index.js"
   },
   "author": "Côme Willot",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
+    "custom-env": "^1.0.0",
     "nodemon": "^1.18.9"
   }
 }
