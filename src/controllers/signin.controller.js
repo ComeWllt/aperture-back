@@ -15,6 +15,7 @@ exports.create = function(req, res) {
       if (!user) {
         res.status(200).send({
           success: false,
+          isAdmin: false,
           msg: 'Authentication failed. User not found.'
         });
       } else {
@@ -24,13 +25,17 @@ exports.create = function(req, res) {
             // if user is found and password is right create a token
             var token = jwt.sign(
               {
-                exp: Math.floor(Date.now() / 1000) + 60 * 60 * 12,
+                exp: Math.floor(Date.now() / 1000) + 60 * 60 * 3,
                 data: user.toJSON()
               },
               process.env.PASSPORT_SECRET
             );
             // return the information including token as JSON
-            res.json({ success: true, token: token });
+            res.json({
+              success: true,
+              isAdmin: user.category === 'admin',
+              token: token
+            });
             Tests.create(req.body).then(() => {
               res.statusCode = 200;
               res.setHeader('Content-Type', 'application/json');
@@ -39,6 +44,7 @@ exports.create = function(req, res) {
           } else {
             res.status(200).send({
               success: false,
+              isAdmin: false,
               msg: 'Authentication failed. Wrong password.'
             });
           }
