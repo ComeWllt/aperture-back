@@ -9,12 +9,28 @@ module.exports = function(passport) {
   opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
   opts.secretOrKey = process.env.PASSPORT_SECRET;
   passport.use(
+    'user',
     new JwtStrategy(opts, function(jwt_payload, done) {
-      User.findOne({ id: jwt_payload.id }, function(err, user) {
+      User.findOne({ _id: jwt_payload.data._id }, function(err, user) {
         if (err) {
           return done(err, false);
         }
         if (user) {
+          done(null, user);
+        } else {
+          done(null, false);
+        }
+      });
+    })
+  );
+  passport.use(
+    'admin',
+    new JwtStrategy(opts, function(jwt_payload, done) {
+      User.findOne({ _id: jwt_payload.data._id }, function(err, user) {
+        if (err) {
+          return done(err, false);
+        }
+        if (user && user.category === 'admin') {
           done(null, user);
         } else {
           done(null, false);
