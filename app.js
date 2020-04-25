@@ -32,6 +32,7 @@ app.use(cookieParser());
 
 const whitelist = [
   'https://aperture-photos.netlify.com',
+  'https://aperture-photos.netlify.app',
   'https://my-photo-front.herokuapp.com'
 ];
 if (process.env.NODE_ENV === 'dev') whitelist.push('http://localhost:8080');
